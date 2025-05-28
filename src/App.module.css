@@ -15,4 +15,30 @@
     font-size: 25px;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
+    margin-bottom: 30px;
+}
+  .buttonPdf {
+    background: green;
+    color: white;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+.buttonPdfContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+.containerSection1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }

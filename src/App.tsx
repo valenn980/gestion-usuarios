@@ -3,6 +3,7 @@ import AddUserForm from './components/AddUserForm';
 import { useUsers } from './hooks/useUsers';
 import styles from './App.module.css';
 import { Toaster } from 'react-hot-toast';
+import { exportUsersToPDF } from './utils/exportToPdf';
 
 /**
  * Componente principal de la aplicación.
@@ -17,6 +18,7 @@ import { Toaster } from 'react-hot-toast';
  * - Un formulario para agregar usuarios.
  * - Una tabla para mostrar los usuarios activos.
  * - Un sistema de notificaciones (Toaster) para mostrar mensajes de éxito.
+ * - Un botón para descargar pdf con los usuarios en la tabla
  */
 
 function App() {
@@ -25,6 +27,11 @@ function App() {
 
   return (
     <div className={styles.containerPrincipal}>
+      <div className={styles.buttonPdfContainer}>
+        <button className={styles.buttonPdf} onClick={() => exportUsersToPDF(users)}>
+          Descargar PDF
+        </button>
+      </div>
       <h1 className={styles.titlePrincipal}>Gestión de Usuarios</h1>
       <AddUserForm onAdd={addUser} />
       <UserTable users={users} onDelete={deleteUser} />
