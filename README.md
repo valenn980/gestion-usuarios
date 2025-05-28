@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Gestión de Usuarios 👥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web construida con **React + TypeScript** que permite gestionar usuarios a través de una tabla interactiva. Los datos se consumen desde una API pública, con funcionalidades como agregado y eliminación de registros.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [react-hot-toast](https://react-hot-toast.com/) – Notificaciones elegantes
+- CSS Modules – Estilos locales por componente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📦 Características
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🔍 **Lectura de usuarios** desde una API pública (`https://api.fake-rest.refine.dev/users`)
+- ✅ **Filtrado automático** de usuarios activos (`status: true`)
+- ➕ **Agregar usuario** (formulario con nombre, apellido y email)
+- ❌ **Eliminar usuario** con confirmación visual
+- 📋 **Interfaz amigable** con estilos personalizados
+- 🔔 **Toasts de éxito** al agregar o eliminar
+- 📄 **Descarga de PDF** con listado de usuarios 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📁 Estructura del Proyecto
+
+src/
+│
+├── components/ # Componentes reutilizables (tabla, formulario)
+├── hooks/ # Custom hooks (lógica de usuarios)
+├── services/ # Funciones de consumo de API
+├── styles/ # Estilos en CSS Modules
+├── types/ # Tipado TypeScript (interfaces)
+├── App.tsx # Componente principal
+└── main.tsx # Punto de entrada de la app
+
+## 🧪 Scripts disponibles
+
+En el directorio del proyecto puedes correr:
+
+```bash
+npm install       # Instala dependencias
+npm run dev       # Corre la app en modo desarrollo
+npm run build     # Construye la app para producción
+
