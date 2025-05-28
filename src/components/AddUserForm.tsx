@@ -1,10 +1,25 @@
 import { useState } from 'react';
 import styles from './styles/AddUserForm.module.css';
 
+/**
+ * Props del componente AddUserForm.
+ * 
+ * @property onAdd - Función que se llama al enviar el formulario, recibe los datos del nuevo usuario.
+ */
 interface Props {
   onAdd: (user: { firstName: string; lastName: string; email: string }) => void;
 }
 
+/**
+ * Componente de formulario para agregar un nuevo usuario.
+ * 
+ * Permite ingresar nombre, apellido y correo electrónico. Al enviar el formulario:
+ * - Llama a la función `onAdd` pasada por props con los datos ingresados.
+ * - Limpia el formulario para una nueva entrada.
+ * 
+ * @param onAdd Función para agregar un nuevo usuario (pasada desde el componente padre).
+ * @returns JSX que representa el formulario de entrada.
+ */
 export default function AddUserForm({ onAdd }: Props) {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '' });
 

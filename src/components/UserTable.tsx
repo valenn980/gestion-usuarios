@@ -1,11 +1,27 @@
 import type { User } from '../types/user';
 import styles from './styles/UserTable.module.css';
 
+/**
+ * Props del componente UserTable.
+ * 
+ * @property users - Lista de usuarios a mostrar en la tabla.
+ * @property onDelete - Función que se ejecuta al eliminar un usuario, recibe el ID del usuario.
+ */
 interface Props {
   users: User[];
   onDelete: (id: number) => void;
 }
 
+/**
+ * Componente que renderiza una tabla con la información de los usuarios.
+ *
+ * Muestra los campos: nombre, apellido, email, y un botón para eliminar
+ * cada usuario. 
+ *
+ * @param users Lista de usuarios activos.
+ * @param onDelete Función que se ejecuta al presionar el botón "Eliminar".
+ * @returns JSX con la tabla de usuarios.
+ */
 export default function UserTable({ users, onDelete }: Props) {
   return (
     <table className={styles.containerTable}>
