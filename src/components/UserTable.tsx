@@ -10,26 +10,25 @@ export default function UserTable({ users, onDelete }: Props) {
   return (
     <table className={styles.containerTable}>
       <thead>
-        <tr className="bg-gray-200">
-          <th className="p-2">Nombre</th>
-          <th className="p-2">Apellido</th>
-          <th className="p-2">Email</th>
-          <th className="p-2">Acción</th>
+        <tr>
+          <th className={styles.titleTable}>Nombre</th>
+          <th className={styles.titleTable}>Apellido</th>
+          <th className={styles.titleTable}>Email</th>
+          <th className={styles.titleTable}>Acción</th>
         </tr>
       </thead>
       <tbody>
         {users.map((u) => (
           <tr key={u.id} className="border-t">
-            <td className="p-2">{u.firstName}</td>
-            <td className="p-2">{u.lastName}</td>
-            <td className="p-2">{u.email}</td>
-            <td className="p-2">
-              <button
-                className="bg-red-500 text-white px-2 py-1 rounded"
-                onClick={() => onDelete(u.id)}
-              >
-                Eliminar
-              </button>
+            <td className={styles.itemTable}>{u.firstName}</td>
+            <td className={styles.itemTable}>{u.lastName}</td>
+            <td className={styles.itemTable}>{u.email}</td>
+            <td className={styles.itemTable}>
+                <div className={styles.containerButton}>
+                    <button className={styles.button} onClick={() => onDelete(u.id)}>
+                        Eliminar
+                    </button>
+                </div>
             </td>
           </tr>
         ))}
